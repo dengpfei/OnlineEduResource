@@ -21,7 +21,7 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
 	public UserInfo queryUserByUserCodeAndPassWord(UserInfo user) {
 		HQLExecute queryService = new HQLExecute(sessionFactory);
 		List<Object> args = new ArrayList<Object>();
-		String hql = "from UserInfo where userName =?　and userPwd = ?";
+		String hql = "from UserInfo u where u.userName =?　and u.userPwd = ?";
 		args.add(user.getUserName());
 		args.add(user.getUserPwd());
 		List<UserInfo> userList= queryService.find(hql, args.toArray());
@@ -30,5 +30,4 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
 		}
 		return userList.get(0);
 	}
-
 }

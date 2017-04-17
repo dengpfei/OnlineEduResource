@@ -4,22 +4,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>用户注册</title>
 <script type="text/javascript">
-	function addUser(){
-		var form = document.forms[0];
-		form.action = "/OnlineEduResource/userController/toAddUser";
-		form.method="post";
-		form.submit();
+	var userName = cument.getElementsByName("userName");
+	var password = cument.getElementsByName("password");
+	var mobile = cument.getElementsByName("mobile");
+	var email = cument.getElementsByName("email");
+	var address = cument.getElementsByName("address");
+	var hobby = cument.getElementsByName("hobby");
+	if (userName == null) {
+		document.write("用户名不能为空");
 	}
 </script>
 </head>
 <body>
-	<h1>添加用户</h1>
-	<form action="" name="userForm">
-		用户号：<input type="text" name="userName">
-		密码：<input type="text" name="password">
-		<input type="button" value="添加" onclick="addUser()">
+	<h1 align="center">注册</h1>
+	<form action="/OnlineEduResource/userController/toAddUser" name="userForm">
+		<table cellspacing="0" align="center">
+			<tr><td>用户号：<input type="text" name="userName"></td></tr>
+			<tr><td>密    码：<input type="password" name="password"></td></tr>
+			<tr><td>手机号：<input type="text" name="mobile"></td></tr>
+			<tr><td>邮箱    ：<input type="text" name="email"></td></tr>
+			<tr><td>住址    ：<input type="text" name="address"></td></tr>
+			<tr><td>爱好    ：<input type="text" name="hobby"></td></tr>
+			<tr><td rowspan="2"><input type="submit" name="register" value="注册"></td><td><input type="reset" name="reset" value="重置"></td></tr>
+		</table>
 	</form>
 </body>
 </html>

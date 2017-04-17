@@ -217,5 +217,12 @@
    			 <artifactId>aspectjweaver</artifactId>
    			 <version>1.7.3</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/ant/ant -->
+		<dependency>
+		    <groupId>ant</groupId>
+		    <artifactId>ant</artifactId>
+		    <version>1.6.5</version>
+		</dependency>
+		
 	</dependencies>
 </project>

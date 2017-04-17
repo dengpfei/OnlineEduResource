@@ -17,11 +17,19 @@ public class UserController {
 	@RequestMapping("/toAddUser")
 	public String addUser(HttpServletRequest request){
 		String userName = request.getParameter("userName");
+		//查询用户名是不是已经存在了
 		String password =  request.getParameter("password");
-		System.out.println("开始添加，用户名："+userName+"密码："+password);
+		String mobile = request.getParameter("mobile");
+		String email = request.getParameter("email");
+		String address = request.getParameter("address");
+		String hobby = request.getParameter("hobby");
 		UserInfo user = new UserInfo();
 		user.setUserName(userName);
 		user.setUserPwd(password);
+		user.setMobile(mobile);
+		user.setEmail(email);
+		user.setAddress(address);
+		user.setHobby(hobby);
 		userServiceImpl.addUser(user);
 		return "add";
 	}
