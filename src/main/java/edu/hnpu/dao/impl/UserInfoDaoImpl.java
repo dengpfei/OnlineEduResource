@@ -30,4 +30,15 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
 		}
 		return userList.get(0);
 	}
+
+	@Override
+	public UserInfo queryUserInfoByUserName(String userName) {
+		HQLExecute queryService = new HQLExecute(sessionFactory);
+		String hql = "from UserInfo where userName = ?";
+		List<UserInfo> userList = queryService.find(hql, userName);
+		if (CollectionUtils.isEmpty(userList)) {
+			return  null;
+		}
+		return userList.get(0);
+	}
 }

@@ -18,6 +18,10 @@ public class UserController {
 	public String addUser(HttpServletRequest request){
 		String userName = request.getParameter("userName");
 		//查询用户名是不是已经存在了
+		UserInfo userInfo = userServiceImpl.queryUserInfoByUserName(userName);
+		if (userInfo !=null) {
+			//提示给他
+		}
 		String password =  request.getParameter("password");
 		String mobile = request.getParameter("mobile");
 		String email = request.getParameter("email");
