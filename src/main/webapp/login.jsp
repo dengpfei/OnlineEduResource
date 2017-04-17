@@ -4,16 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>登录</title>
 </head>
-
+<script type="text/javascript">
+</script>
 <body>
-<h1>用户登录</h1>
+<div id="login">
+<h1 align="center">用户登录</h1>
 	<form action="loginController/login" name="login">
-		用户号：<input type="text" name="userName">
-		密码：<input type="text" name="password">
-		<input type="submit" value="登录" >
-		<input type="reset" value="重置" >
+		<table cellspacing="0" align="center">
+			<tr><td>用户号：</td><td><input type="text" name="userName"></td></tr>
+			<tr><td>密码：</td><td><input type="text" name="password"></td></tr>
+			<tr><td rowspan="2"><input type="submit" value="登录" ></td><td><input type="reset" value="重置" ></td></tr>
+			<tr><td><a href="pwdGet.jsp">不小心，忘记密码？？？</a></td><td></td></tr>
+		</table>
 	</form>
+</div>
 </body>
 </html>

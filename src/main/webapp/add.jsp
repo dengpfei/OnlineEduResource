@@ -21,12 +21,12 @@
 	<h1 align="center">注册</h1>
 	<form action="/OnlineEduResource/userController/toAddUser" name="userForm">
 		<table cellspacing="0" align="center">
-			<tr><td>用户号：<input type="text" name="userName"></td></tr>
-			<tr><td>密    码：<input type="password" name="password"></td></tr>
-			<tr><td>手机号：<input type="text" name="mobile"></td></tr>
-			<tr><td>邮箱    ：<input type="text" name="email"></td></tr>
-			<tr><td>住址    ：<input type="text" name="address"></td></tr>
-			<tr><td>爱好    ：<input type="text" name="hobby"></td></tr>
+			<tr><td>用户号：</td><td><input type="text" name="userName"></td></tr>
+			<tr><td>密码：</td><td><input type="password" name="password"></td></tr>
+			<tr><td>手机号：</td><td><input type="text" name="mobile"></td></tr>
+			<tr><td>邮箱    ：</td><td><input type="text" name="email"></td></tr>
+			<tr><td>住址    ：</td><td><input type="text" name="address"></td></tr>
+			<tr><td>爱好    ：</td><td><input type="text" name="hobby"></td></tr>
 			<tr><td rowspan="2"><input type="submit" name="register" value="注册"></td><td><input type="reset" name="reset" value="重置"></td></tr>
 		</table>
 	</form>
