@@ -1,6 +1,10 @@
 package edu.hnpu.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,14 +18,12 @@ import edu.hnpu.service.impl.UserServiceImpl;
 public class UserController {
 	@Autowired
 	private UserServiceImpl userServiceImpl;
+	PrintWriter out = null;
 	@RequestMapping("/toAddUser")
-	public String addUser(HttpServletRequest request){
+	public String addUser(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		String userName = request.getParameter("userName");
+		out = response.getWriter();
 		//查询用户名是不是已经存在了
-		UserInfo userInfo = userServiceImpl.queryUserInfoByUserName(userName);
-		if (userInfo !=null) {
-			//提示给他
-		}
 		String password =  request.getParameter("password");
 		String mobile = request.getParameter("mobile");
 		String email = request.getParameter("email");
@@ -35,14 +37,19 @@ public class UserController {
 		user.setAddress(address);
 		user.setHobby(hobby);
 		userServiceImpl.addUser(user);
-		return "add";
+		return "register";
 	}
 	
-	@RequestMapping("/getAllUser")
-	public String getAllUser(UserInfo user,HttpServletRequest request){
-		
-		userServiceImpl.addUser(user);
-		
-		return "add";
+	@RequestMapping("/checkIsExistUserName")
+	public String getAllUser(UserInfo user,HttpServletRequest request,HttpServletResponse response) throws IOException{
+		String userName = request.getParameter("userName");
+		out = response.getWriter();
+		UserInfo userInfo = userServiceImpl.queryUserInfoByUserName(userName);
+		if (userInfo !=null) {
+			//提示给他
+			out.println("<script> alert('不好意思，该用户名已经被使用了，请你更换！');</script>");
+			return "false";
+		}
+		return "true";
 	}
 }

@@ -15,13 +15,28 @@
 	if (userName == null) {
 		document.write("用户名不能为空");
 	}
+	
+	function getUserName() {
+	   var userName = $.getElementByName("userName");
+	    $.ajax({
+	        type : "POST",
+	        url : "userController/checkIsExistUserName?userName="+userName,
+	        dataType : "json",
+	        success : function(data) {
+	        	if("false"== data){
+	        		alert("用户名已经存在！");
+	        	}
+	        }
+	    });
+	}
+		
 </script>
 </head>
 <body>
 	<h1 align="center">注册</h1>
 	<form action="/OnlineEduResource/userController/toAddUser" name="userForm">
 		<table cellspacing="0" align="center">
-			<tr><td>用户号：</td><td><input type="text" name="userName"></td></tr>
+			<tr><td>用户号：</td><td><input type="text" name="userName" onblur="getUserName();"></td></tr>
 			<tr><td>密码：</td><td><input type="password" name="password"></td></tr>
 			<tr><td>手机号：</td><td><input type="text" name="mobile"></td></tr>
 			<tr><td>邮箱    ：</td><td><input type="text" name="email"></td></tr>
