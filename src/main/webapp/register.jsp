@@ -15,7 +15,7 @@
   <style>
 .theCenterBox{width:670px; margin-top:200px;}
 </style>
-  <div class="theLoginBox" style="width:657px">
+  <div class="theLoginBox" >
     <div class="loginTxt">注册账号</div>
     <form id="leftForm" action="register.jsp" method="post">
       <div class="theLoginArea" id="loginBox">
@@ -49,11 +49,11 @@
           </div>
         </div>
       </div>
-      <div class="theRegArea fixRegHeight" id="reg_reg">
+      <!-- <div class="theRegArea fixRegHeight" id="reg_reg">
         <a class="apply_reg" href="#"></a> <br/>
         <h2>快快加入我们把</h2>
         <br/>
-        <a class="reg_login" href="login.jsp"></a> </div>
+        <a class="reg_login" href="login.jsp"></a> </div> -->
     </form>
   </div>
   
