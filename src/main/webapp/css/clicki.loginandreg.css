@@ -11,7 +11,7 @@ html{height:100%;overflow:hidden;}
     text-align: center;
     position: fixed;
     top: 100px;
-    margin-left: 60px;
+    margin-left: 10px;
     -moz-box-shadow: rgba(24, 108, 162, 0.6) 0 0 4px;
     -webkit-box-shadow: rgba(24, 108, 162, 0.6) 0 0 4px;
     box-shadow: rgba(24, 108, 162, 0.6) 4px;
